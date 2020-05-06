@@ -23,11 +23,35 @@ public class Utilisateur implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(unique = true)
-	private String username;
+	private String username; // username : email
 	private String password;
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JsonIgnore
 	private List<RoleUtilisateur> roles = new ArrayList<RoleUtilisateur>();
+	private String nom;
+	private String prenom;
+	private String cne;
+	private String tel;
+	private String adresse;
+	
+
+	public Utilisateur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Utilisateur(long id, String username, String password, List<RoleUtilisateur> roles, String nom,
+			String prenom, String cne, String tel, String adresse) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.cne = cne;
+		this.tel = tel;
+		this.adresse = adresse;
+	}
 	public long getId() {
 		return id;
 	}
@@ -40,6 +64,42 @@ public class Utilisateur implements Serializable {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public List<RoleUtilisateur> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<RoleUtilisateur> roles) {
+		this.roles = roles;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	public String getCne() {
+		return cne;
+	}
+	public void setCne(String cne) {
+		this.cne = cne;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
 	@JsonIgnore
 	public String getPassword() {
 		return password;
@@ -48,23 +108,6 @@ public class Utilisateur implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public List<RoleUtilisateur> getRoles() {
-		return roles;
-	}
-	public void setRoles(List<RoleUtilisateur> roles) {
-		this.roles = roles;
-	}
-	public Utilisateur(long id, String username, String password, List<RoleUtilisateur> roles) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.roles = roles;
-	}
-	public Utilisateur() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
+
 	
 }
