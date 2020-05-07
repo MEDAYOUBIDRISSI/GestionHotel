@@ -41,7 +41,4 @@ public class DateTacheKey implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-    
-    
 }
