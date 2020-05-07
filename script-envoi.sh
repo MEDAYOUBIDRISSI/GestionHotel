@@ -1,5 +1,5 @@
 git add .
-git commit -m "test mai 0214"
+git commit -m "test mai 02315478"
 git remote add origin https://github.com/MAI202020/GestionHotel.git
 git push -f origin master
 
