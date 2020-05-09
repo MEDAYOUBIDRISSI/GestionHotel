@@ -1,31 +1,29 @@
 package org.emsi.gestionhotel.entity;
 
-import javax.persistence.EmbeddedId;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
 @Entity
-public class DateTache {
-	
-	
-	@EmbeddedId
-	private DateTacheKey id;
-	@JoinColumn(name = "tache", referencedColumnName = "id", insertable = false, updatable = false)
+public class DateTache implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
 	@ManyToOne
+	@JoinColumn
 	private Tache tache;
-	@JoinColumn(name = "employe", referencedColumnName = "id", insertable = false, updatable = false)
+	@Id
 	@ManyToOne
+	@JoinColumn
 	private Employe employe;	
 	private String dureeTache;
 	private Boolean etat;
-	public DateTacheKey getId() {
-		return id;
-	}
-	public void setId(DateTacheKey id) {
-		this.id = id;
-	}
+	
 	public Tache getTache() {
 		return tache;
 	}
@@ -50,9 +48,9 @@ public class DateTache {
 	public void setEtat(Boolean etat) {
 		this.etat = etat;
 	}
-	public DateTache(DateTacheKey id, Tache tache, Employe employe, String dureeTache, Boolean etat) {
+	
+	public DateTache(Tache tache, Employe employe, String dureeTache, Boolean etat) {
 		super();
-		this.id = id;
 		this.tache = tache;
 		this.employe = employe;
 		this.dureeTache = dureeTache;

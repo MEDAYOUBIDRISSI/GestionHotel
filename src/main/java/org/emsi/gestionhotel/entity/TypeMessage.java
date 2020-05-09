@@ -3,6 +3,7 @@ package org.emsi.gestionhotel.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ public class TypeMessage {
 	private long id;
 	private String libelle;
 	
-	@OneToMany(mappedBy = "typeMessage")
+	@OneToMany(mappedBy = "typeMessage",fetch = FetchType.EAGER)
 	private List<Message> messages;
 
 	public TypeMessage(long id, String libelle, List<Message> messages) {

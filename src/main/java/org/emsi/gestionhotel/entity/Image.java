@@ -1,29 +1,29 @@
 package org.emsi.gestionhotel.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Commande {
+public class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	private String url;
 	
-	// ligne Commande
-	@OneToMany(mappedBy = "commande", cascade = CascadeType.ALL)
-	private Set<LigneCmd> ligneCmds = new HashSet<>();
+	// utilisateur
+	@OneToOne(fetch = FetchType.LAZY)
+	private Utilisateur utilisateur;
+	// espace 
+	@ManyToOne(fetch = FetchType.LAZY)
+    private Espace espace;
+	// produit 
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Produit produit;
 	
-	// reservation
-	@OneToOne(mappedBy = "commande")
-	private Reservation reservation;
+	
 }

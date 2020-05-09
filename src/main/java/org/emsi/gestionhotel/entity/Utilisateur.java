@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -34,23 +35,17 @@ public class Utilisateur implements Serializable {
 	private String tel;
 	private String adresse;
 	
-
-	public Utilisateur() {
-		super();
-		// TODO Auto-generated constructor stub
+	// Image
+	@OneToOne(mappedBy = "utilisateur")
+    private Image image;
+	
+	@JsonIgnore
+	public String getPassword() {
+		return password;
 	}
-	public Utilisateur(long id, String username, String password, List<RoleUtilisateur> roles, String nom,
-			String prenom, String cne, String tel, String adresse) {
-		super();
-		this.id = id;
-		this.username = username;
+	@JsonSetter
+	public void setPassword(String password) {
 		this.password = password;
-		this.roles = roles;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.cne = cne;
-		this.tel = tel;
-		this.adresse = adresse;
 	}
 	public long getId() {
 		return id;
@@ -100,13 +95,29 @@ public class Utilisateur implements Serializable {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	@JsonIgnore
-	public String getPassword() {
-		return password;
+	public Image getImage() {
+		return image;
 	}
-	@JsonSetter
-	public void setPassword(String password) {
+	public void setImage(Image image) {
+		this.image = image;
+	}
+	public Utilisateur(long id, String username, String password, List<RoleUtilisateur> roles, String nom,
+			String prenom, String cne, String tel, String adresse, Image image) {
+		super();
+		this.id = id;
+		this.username = username;
 		this.password = password;
+		this.roles = roles;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.cne = cne;
+		this.tel = tel;
+		this.adresse = adresse;
+		this.image = image;
+	}
+	public Utilisateur() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	
