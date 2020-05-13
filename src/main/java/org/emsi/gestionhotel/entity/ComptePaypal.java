@@ -25,4 +25,35 @@ public class ComptePaypal {
 	// facturation
 	@OneToMany(mappedBy = "comptepaypal", cascade = CascadeType.ALL)
     private List<Facturation> facturations;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	public List<Facturation> getFacturations() {
+		return facturations;
+	}
+	public void setFacturations(List<Facturation> facturations) {
+		this.facturations = facturations;
+	}
+	
 }

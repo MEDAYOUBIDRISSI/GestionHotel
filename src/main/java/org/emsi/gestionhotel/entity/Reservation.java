@@ -55,5 +55,117 @@ public class Reservation {
 	// Commande
 	@OneToOne(fetch = FetchType.LAZY)
 	private Commande commande;
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public Date getDateDebut() {
+		return dateDebut;
+	}
+
+
+	public void setDateDebut(Date dateDebut) {
+		this.dateDebut = dateDebut;
+	}
+
+
+	public Date getDateFin() {
+		return dateFin;
+	}
+
+
+	public void setDateFin(Date dateFin) {
+		this.dateFin = dateFin;
+	}
+
+
+	public Boolean getEtat() {
+		return etat;
+	}
+
+
+	public void setEtat(Boolean etat) {
+		this.etat = etat;
+	}
+
+
+	public List<Table> getTables() {
+		return tables;
+	}
+
+
+	public void setTables(List<Table> tables) {
+		this.tables = tables;
+	}
+
+
+	public Espace getEspace() {
+		return espace;
+	}
+
+
+	public void setEspace(Espace espace) {
+		this.espace = espace;
+	}
+
+
+	public Receptionniste getReceptionniste() {
+		return receptionniste;
+	}
+
+
+	public void setReceptionniste(Receptionniste receptionniste) {
+		this.receptionniste = receptionniste;
+	}
+
+
+	public Serveur getServeur() {
+		return serveur;
+	}
+
+
+	public void setServeur(Serveur serveur) {
+		this.serveur = serveur;
+	}
+
+
+	public Client getClient() {
+		return client;
+	}
+
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+
+	public Facturation getFacturation() {
+		return facturation;
+	}
+
+
+	public void setFacturation(Facturation facturation) {
+		this.facturation = facturation;
+	}
+
+
+	public Commande getCommande() {
+		return commande;
+	}
+
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+	
+	
 	
 }

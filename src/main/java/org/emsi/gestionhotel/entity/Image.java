@@ -24,6 +24,38 @@ public class Image {
 	// produit 
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Produit produit;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+	public Espace getEspace() {
+		return espace;
+	}
+	public void setEspace(Espace espace) {
+		this.espace = espace;
+	}
+	public Produit getProduit() {
+		return produit;
+	}
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+	
+	
 	
 	
 }

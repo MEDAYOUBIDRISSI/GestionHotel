@@ -10,4 +10,24 @@ public class Chambre extends Espace {
     // cATEGORIE cHAMBRE
     @ManyToOne
     private CategorieChambre categorieC;
+	public int getNbrLit() {
+		return nbrLit;
+	}
+	public void setNbrLit(int nbrLit) {
+		this.nbrLit = nbrLit;
+	}
+	public int getNbrSalledeBain() {
+		return nbrSalledeBain;
+	}
+	public void setNbrSalledeBain(int nbrSalledeBain) {
+		this.nbrSalledeBain = nbrSalledeBain;
+	}
+	public CategorieChambre getCategorieC() {
+		return categorieC;
+	}
+	public void setCategorieC(CategorieChambre categorieC) {
+		this.categorieC = categorieC;
+	}
+    
+    
 }

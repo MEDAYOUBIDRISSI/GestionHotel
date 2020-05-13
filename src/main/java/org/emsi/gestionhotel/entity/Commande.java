@@ -26,4 +26,29 @@ public class Commande {
 	// reservation
 	@OneToOne(mappedBy = "commande")
 	private Reservation reservation;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Set<LigneCmd> getLigneCmds() {
+		return ligneCmds;
+	}
+
+	public void setLigneCmds(Set<LigneCmd> ligneCmds) {
+		this.ligneCmds = ligneCmds;
+	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
+	}
+	
 }

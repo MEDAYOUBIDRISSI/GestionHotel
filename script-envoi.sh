@@ -1,5 +1,5 @@
 git add .
-git commit -m "create entity"
+git commit -m "respo and controller"
 git remote add origin https://github.com/MAI202020/GestionHotel.git
 git push -f origin master
 

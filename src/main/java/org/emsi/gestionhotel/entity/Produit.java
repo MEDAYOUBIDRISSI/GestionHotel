@@ -22,6 +22,47 @@ public class Produit {
 	// Image
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
     private List<Image> images ;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+	public float getPrix() {
+		return prix;
+	}
+
+	public void setPrix(float prix) {
+		this.prix = prix;
+	}
+
+	public Set<LigneCmd> getLigneCmds() {
+		return ligneCmds;
+	}
+
+	public void setLigneCmds(Set<LigneCmd> ligneCmds) {
+		this.ligneCmds = ligneCmds;
+	}
+
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+    
     
 	
 }

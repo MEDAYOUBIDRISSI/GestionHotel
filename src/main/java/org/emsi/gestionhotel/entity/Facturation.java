@@ -28,4 +28,46 @@ public class Facturation {
 	// Reservation
 	@OneToOne(fetch = FetchType.LAZY)
 	private Reservation reservation;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public float getTotalPrix() {
+		return totalPrix;
+	}
+
+	public void setTotalPrix(float totalPrix) {
+		this.totalPrix = totalPrix;
+	}
+
+	public Date getDateFacturation() {
+		return dateFacturation;
+	}
+
+	public void setDateFacturation(Date dateFacturation) {
+		this.dateFacturation = dateFacturation;
+	}
+
+	public ComptePaypal getComptepaypal() {
+		return comptepaypal;
+	}
+
+	public void setComptepaypal(ComptePaypal comptepaypal) {
+		this.comptepaypal = comptepaypal;
+	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
+	}
+	
+	
 }

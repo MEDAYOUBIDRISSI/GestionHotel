@@ -15,4 +15,22 @@ public class Client extends Utilisateur {
 	// reservation 
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Reservation> reservations ;
+
+	public List<ComptePaypal> getComptePaypals() {
+		return comptePaypals;
+	}
+
+	public void setComptePaypals(List<ComptePaypal> comptePaypals) {
+		this.comptePaypals = comptePaypals;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
+	
+	
 }

@@ -26,6 +26,47 @@ public class Tache {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private TypeTache typeTache;
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<DateTache> getDateTaches() {
+		return dateTaches;
+	}
+
+	public void setDateTaches(List<DateTache> dateTaches) {
+		this.dateTaches = dateTaches;
+	}
+
+	public TypeTache getTypeTache() {
+		return typeTache;
+	}
+
+	public void setTypeTache(TypeTache typeTache) {
+		this.typeTache = typeTache;
+	}
+
+	
 	
 	
 	

@@ -19,5 +19,30 @@ public class Table {
 	// reservation
 	@ManyToMany
 	private List<Reservation> reservations;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public int getNbPlace() {
+		return nbPlace;
+	}
+
+	public void setNbPlace(int nbPlace) {
+		this.nbPlace = nbPlace;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
+	
 	
 }
