@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -20,6 +22,7 @@ public class Tache {
 	private String nom;
 	private String description;
 	@OneToMany(mappedBy = "tache")
+	@JsonIgnore
 	private List<DateTache> dateTaches;
 	
 	// Type Tâche

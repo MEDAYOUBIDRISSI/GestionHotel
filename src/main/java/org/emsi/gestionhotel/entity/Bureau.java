@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 @Entity
 public class Bureau extends Espace {
     private int nbrTable;
-
+    // getters / setters
 	public int getNbrTable() {
 		return nbrTable;
 	}

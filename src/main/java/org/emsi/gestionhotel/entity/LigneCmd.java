@@ -6,11 +6,13 @@ import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
 @Entity
+@IdClass(LigneCmdKey.class)
 public class LigneCmd implements Serializable {
 	
 	@Id
@@ -37,7 +39,7 @@ public class LigneCmd implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*@Override
+	@Override
 	public int hashCode() {
 		return Objects.hash(commande, produit, quantite);
 	}
@@ -53,7 +55,7 @@ public class LigneCmd implements Serializable {
 		LigneCmd other = (LigneCmd) obj;
 		return Objects.equals(commande, other.commande) && Objects.equals(produit, other.produit)
 				&& quantite == other.quantite;
-	}*/
+	}
 
 	public Commande getCommande() {
 		return commande;

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Image {
 	@Id
@@ -17,12 +19,15 @@ public class Image {
 	
 	// utilisateur
 	@OneToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
 	private Utilisateur utilisateur;
 	// espace 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
     private Espace espace;
 	// produit 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
 	private Produit produit;
 	public long getId() {
 		return id;

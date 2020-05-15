@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Produit {
 	@Id
@@ -17,6 +19,7 @@ public class Produit {
 	private String libelle;
 	private float prix;
 	@OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
+	@JsonIgnore
     private Set<LigneCmd> ligneCmds;
 	
 	// Image

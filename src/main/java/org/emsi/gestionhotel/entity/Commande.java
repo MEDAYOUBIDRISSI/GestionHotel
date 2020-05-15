@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Commande {
 	@Id
@@ -21,6 +23,7 @@ public class Commande {
 	
 	// ligne Commande
 	@OneToMany(mappedBy = "commande", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Set<LigneCmd> ligneCmds = new HashSet<>();
 	
 	// reservation

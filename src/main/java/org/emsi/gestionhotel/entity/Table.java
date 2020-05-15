@@ -16,7 +16,7 @@ public class Table {
     private long id;
 	private int nbPlace;
 	
-	// reservation
+	//reservation
 	@ManyToMany
 	private List<Reservation> reservations;
 

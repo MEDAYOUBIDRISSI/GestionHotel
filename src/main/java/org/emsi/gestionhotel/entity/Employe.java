@@ -1,5 +1,6 @@
 package org.emsi.gestionhotel.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -12,8 +13,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.MetaValue;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-public class Employe extends Utilisateur {
+public class Employe extends Utilisateur{
 	private float salaire;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateEmbauche;
@@ -29,6 +35,7 @@ public class Employe extends Utilisateur {
 	// tache 
 	
 	@OneToMany(mappedBy = "employe")
+	@JsonIgnore
 	private List<DateTache> dateTaches;
 
 	public float getSalaire() {
@@ -62,7 +69,7 @@ public class Employe extends Utilisateur {
 	public void setResponsable(Employe responsable) {
 		this.responsable = responsable;
 	}
-
+	@JsonGetter
 	public List<DateTache> getDateTaches() {
 		return dateTaches;
 	}

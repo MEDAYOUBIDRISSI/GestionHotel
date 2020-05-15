@@ -20,6 +20,4 @@ public class Receptionniste extends Employe {
 		public void setReservations(List<Reservation> reservations) {
 			this.reservations = reservations;
 		}
-
-		
 }

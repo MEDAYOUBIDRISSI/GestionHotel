@@ -3,14 +3,16 @@ package org.emsi.gestionhotel.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
+@IdClass(DateTacheKey.class)
 public class DateTache implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -30,6 +32,7 @@ public class DateTache implements Serializable {
 	public void setTache(Tache tache) {
 		this.tache = tache;
 	}
+	
 	public Employe getEmploye() {
 		return employe;
 	}
@@ -60,6 +63,4 @@ public class DateTache implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 }
