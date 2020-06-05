@@ -68,6 +68,16 @@ public class Facturation {
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
 	}
+
+	public Facturation(long id, float totalPrix, Date dateFacturation, ComptePaypal comptepaypal,
+			Reservation reservation) {
+		super();
+		this.id = id;
+		this.totalPrix = totalPrix;
+		this.dateFacturation = dateFacturation;
+		this.comptepaypal = comptepaypal;
+		this.reservation = reservation;
+	}
 	
 	
 }

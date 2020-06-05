@@ -65,6 +65,20 @@ public class Espace {
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
+
+	public Espace(long id, float prix, String description, List<Image> images, List<Reservation> reservations) {
+		super();
+		this.id = id;
+		this.prix = prix;
+		this.description = description;
+		this.images = images;
+		this.reservations = reservations;
+	}
+
+	public Espace() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
     
     
 

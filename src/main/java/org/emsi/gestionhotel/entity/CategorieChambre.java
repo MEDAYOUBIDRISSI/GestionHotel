@@ -31,6 +31,12 @@ public class CategorieChambre {
 	public void setChambres(List<Chambre> chambres) {
 		this.chambres = chambres;
 	}
+	public CategorieChambre(long id, String libelle, List<Chambre> chambres) {
+		super();
+		this.id = id;
+		this.libelle = libelle;
+		this.chambres = chambres;
+	}
     
     
 }

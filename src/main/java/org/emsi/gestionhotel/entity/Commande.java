@@ -53,5 +53,13 @@ public class Commande {
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
 	}
+
+	public Commande(long id, Set<LigneCmd> ligneCmds, Reservation reservation) {
+		super();
+		this.id = id;
+		this.ligneCmds = ligneCmds;
+		this.reservation = reservation;
+	}
+	
 	
 }

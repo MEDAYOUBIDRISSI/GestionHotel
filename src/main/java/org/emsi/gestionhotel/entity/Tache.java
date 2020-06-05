@@ -16,6 +16,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Tache {
+	public Tache() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -66,6 +71,15 @@ public class Tache {
 	}
 
 	public void setTypeTache(TypeTache typeTache) {
+		this.typeTache = typeTache;
+	}
+
+	public Tache(long id, String nom, String description, List<DateTache> dateTaches, TypeTache typeTache) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.description = description;
+		this.dateTaches = dateTaches;
 		this.typeTache = typeTache;
 	}
 

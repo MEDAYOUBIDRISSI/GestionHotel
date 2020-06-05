@@ -165,6 +165,23 @@ public class Reservation {
 	public void setCommande(Commande commande) {
 		this.commande = commande;
 	}
+
+
+	public Reservation(long id, Date dateDebut, Date dateFin, Boolean etat, List<Table> tables, Espace espace,
+			Receptionniste receptionniste, Serveur serveur, Client client, Facturation facturation, Commande commande) {
+		super();
+		this.id = id;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.etat = etat;
+		this.tables = tables;
+		this.espace = espace;
+		this.receptionniste = receptionniste;
+		this.serveur = serveur;
+		this.client = client;
+		this.facturation = facturation;
+		this.commande = commande;
+	}
 	
 	
 	

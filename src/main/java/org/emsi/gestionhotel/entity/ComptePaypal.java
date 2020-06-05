@@ -55,5 +55,14 @@ public class ComptePaypal {
 	public void setFacturations(List<Facturation> facturations) {
 		this.facturations = facturations;
 	}
+	public ComptePaypal(long id, String username, String email, Client client, List<Facturation> facturations) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.client = client;
+		this.facturations = facturations;
+	}
+	
 	
 }

@@ -1,48 +1,51 @@
 package org.emsi.gestionhotel;
 
+import java.util.ArrayList;
 import java.util.stream.Stream;
 
+import org.emsi.gestionhotel.entity.CategorieChambre;
+import org.emsi.gestionhotel.entity.Chambre;
+import org.emsi.gestionhotel.entity.Espace;
 import org.emsi.gestionhotel.entity.RoleUtilisateur;
 import org.emsi.gestionhotel.entity.Utilisateur;
-import org.emsi.gestionhotel.service.AccountService;
+import org.emsi.gestionhotel.repository.CategorieChambreRepository;
+import org.emsi.gestionhotel.repository.EspaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-@EnableWebSecurity
 public class JwtSpringSecApplication implements CommandLineRunner {
 
 	@Autowired
-	private AccountService accountService;
+	private EspaceRepository espaceRepository;
+	@Autowired
+	private CategorieChambreRepository categorieChambreRepository;
 	public static void main(String[] args)  {
 		SpringApplication.run(JwtSpringSecApplication.class, args);
 	}
 	
-	@Bean
-	public BCryptPasswordEncoder getBCPE() {
-		return new BCryptPasswordEncoder();
-	}
+	
 	@Override
 	public void run(String... args) throws Exception {
 		
-		/*accountService.saveUtilisateur(new Utilisateur(0,"admin","123456",null));
-		accountService.saveUtilisateur(new Utilisateur(0,"user","123456",null));
-		accountService.saveRole(new RoleUtilisateur(0,"ADMIN"));
-		accountService.saveRole(new RoleUtilisateur(0,"USER"));
-		accountService.addRoleToUtilisateur("admin", "ADMIN");
-		accountService.addRoleToUtilisateur("user", "USER");*/
-		/*Stream.of("T1","T2","T3").forEach(t->{
-			taskRespository.save(new Task(null, t));
-		});*/
+		CategorieChambre categorieChambre1 = new CategorieChambre(0, "catégorie I", null);
+		CategorieChambre categorieChambre2 = new CategorieChambre(0, "catégorie II", null);
+		CategorieChambre categorieChambre3 = new CategorieChambre(0, "catégorie III", null);
+		CategorieChambre categorieChambre4 = new CategorieChambre(0, "catégorie V", null);
 		
-		/*taskRespository.findAll().forEach(r->{
-			System.out.println(r);
-		});*/
+		
+		categorieChambreRepository.save(categorieChambre1);
+		categorieChambreRepository.save(categorieChambre2);
+		categorieChambreRepository.save(categorieChambre3);
+		categorieChambreRepository.save(categorieChambre4);
+		
+		
+		
+		
+		
 	}
 }

@@ -59,6 +59,14 @@ public class Image {
 	public void setProduit(Produit produit) {
 		this.produit = produit;
 	}
+	public Image(long id, String url, Utilisateur utilisateur, Espace espace, Produit produit) {
+		super();
+		this.id = id;
+		this.url = url;
+		this.utilisateur = utilisateur;
+		this.espace = espace;
+		this.produit = produit;
+	}
 	
 	
 	

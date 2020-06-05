@@ -65,6 +65,15 @@ public class Produit {
 	public void setImages(List<Image> images) {
 		this.images = images;
 	}
+
+	public Produit(long id, String libelle, float prix, Set<LigneCmd> ligneCmds, List<Image> images) {
+		super();
+		this.id = id;
+		this.libelle = libelle;
+		this.prix = prix;
+		this.ligneCmds = ligneCmds;
+		this.images = images;
+	}
     
     
 	

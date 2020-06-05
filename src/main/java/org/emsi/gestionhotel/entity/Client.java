@@ -31,6 +31,14 @@ public class Client extends Utilisateur {
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
+
+	public Client(long id, String username, String password, List<RoleUtilisateur> roles, String nom, String prenom,
+			String cne, String tel, String adresse, Image image, List<ComptePaypal> comptePaypals,
+			List<Reservation> reservations) {
+		super(id, username, password, roles, nom, prenom, cne, tel, adresse, image);
+		this.comptePaypals = comptePaypals;
+		this.reservations = reservations;
+	}
 	
 	
 }

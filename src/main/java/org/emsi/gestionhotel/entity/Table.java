@@ -43,6 +43,14 @@ public class Table {
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
+
+	public Table(long id, int nbPlace, List<Reservation> reservations) {
+		super();
+		this.id = id;
+		this.nbPlace = nbPlace;
+		this.reservations = reservations;
+	}
+	
 	
 	
 }
